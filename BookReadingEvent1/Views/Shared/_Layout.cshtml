@@ -22,7 +22,30 @@
                 </button>
                 @Html.ActionLink("HAPPY READING", "About", "Home", null, new { @class = "navbar-brand" })
             </div>
-            
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav ">
+
+                    @{ 
+                        if (User.Identity.IsAuthenticated)
+                        {
+                           <li>@Html.ActionLink("MY EVENTS", "MyEvents", "BookReadingEvent")</li>
+                           <li>@Html.ActionLink("EVENTS INVITATIONS", "EventsInvitedTo", "BookReadingEvent")</li>
+                           <li>@Html.ActionLink("CREATE EVENT", "CreateEvent", "BookReadingEvent")</li>
+                           <li>@Html.ActionLink("LOG OUT", "LogOut", "Login")</li> 
+                        }
+                        
+                        if (!User.Identity.IsAuthenticated)
+                        {
+                             <li>@Html.ActionLink("LOG IN", "Login", "Login")</li>
+                             <li>@Html.ActionLink("REGISTER", "Register", "Register")</li> 
+                        }
+                        <li> <a href="http://helpdesk.nagarro.com">Customer Support</a></li> 
+                     }
+                </ul>
+
+            </div>
+
 
         </div>
     </div>

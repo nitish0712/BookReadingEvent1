@@ -1,4 +1,5 @@
-﻿using BookReadingEvent1.Validations;
+﻿using BookReadingEvent1.Common;
+using BookReadingEvent1.Validations;
 using System.ComponentModel.DataAnnotations;
 
 namespace BookReadingEvent1.Models
@@ -11,7 +12,7 @@ namespace BookReadingEvent1.Models
         
         [Required]
         [EmailValidation]
-        public string Email { get; set; }
+        public string EmailId { get; set; }
 
         [Required]
         [MinLength(8)]
