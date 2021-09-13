@@ -8,6 +8,7 @@ namespace BookReadingEvent1.Models
 {
     public class UserModel
     {
+
         [Required]
         public string UserName { get; set; }
         [Required]
