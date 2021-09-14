@@ -15,7 +15,7 @@ namespace BookReadingEvent1.Common
 
         public DateTime StartTime { get; set; }
 
-        // public EventType? Type { get; set; }
+        public EventType? Type { get; set; }
 
         public float? Duration { get; set; }
 
@@ -30,7 +30,8 @@ namespace BookReadingEvent1.Common
         public virtual User User { get; set; }
 
 
-        // public virtual ICollection<Invitation> Invitations { get; set; }
-        // public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Invitations> Invitations { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }
