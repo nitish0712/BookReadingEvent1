@@ -12,5 +12,11 @@ namespace BookReadingEvent1.Common
         public string EmailId { get; set; }
         public string Password { get; set; }
 
+
+        public virtual ICollection<Event> Events { get; set; }
+
+        public virtual ICollection<Role> Roles { get; set; }
+
+
     }
 }
