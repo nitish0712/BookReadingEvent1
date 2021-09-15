@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using BookReadingEvent1.Validations;
 
 namespace BookReadingEvent1.Models
 {

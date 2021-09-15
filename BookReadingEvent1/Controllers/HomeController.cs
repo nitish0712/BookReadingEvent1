@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BookReadingEvent1.Common;
 using BookReadingEvent1.Models;
 using BookReadingEvent1.Basic1;
+using BookReadingEvent1.Helper;
 
 namespace BookReadingEvent1.Controllers
 {
