@@ -132,7 +132,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Basic1\AllEvents1.cs" />
+    <Compile Include="Basic1\AllUsers1.cs" />
     <Compile Include="Basic2\AllEvents2.cs" />
+    <Compile Include="Basic2\AllUsers2.cs" />
     <Compile Include="Basic2\BookReadingContext.cs" />
     <Compile Include="Basic2\EventInitializer.cs" />
     <Compile Include="BookData.Context.cs">
