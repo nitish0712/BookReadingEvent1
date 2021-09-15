@@ -1,7 +1,33 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿@using System.Collections.Generic
+@using BookReadingEvent1.Models
+@model IEnumerable<IEnumerable<EventModel>>
 
-<p>Use this area to provide additional information.</p>
+
+@{ ViewBag.Title = "About"; }
+
+
+<div class="container">
+    @{
+
+        <table class="table">
+            <thead>
+                <th>Missed Events</th>
+                <th>Upcoming Events</th>
+            </thead>
+            <tbody>
+
+                <tr>
+                    @foreach (var item in Model)
+                    {
+                        <td>
+                             <ul>
+                                @foreach (var evt in item)
+                                {
+                                    <li>@Html.ActionLink(@evt.Title, "ViewEvent", "BookReadingEvent", new { @evt.EventId }, null)</li>
+                                }
+                             </ul>
+                        </td>}
+                </tr>
+            </tbody>
+        </table> }
+</div>
