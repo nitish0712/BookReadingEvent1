@@ -162,6 +162,7 @@
     <Compile Include="Common\Invitations.cs" />
     <Compile Include="Common\Role.cs" />
     <Compile Include="Common\User.cs" />
+    <Compile Include="Controllers\BookReadingEventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
