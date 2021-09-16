@@ -134,11 +134,13 @@
     <Compile Include="Basic1\AllEvents1.cs" />
     <Compile Include="Basic1\AllUsers1.cs" />
     <Compile Include="Basic1\RegisterUser1.cs" />
+    <Compile Include="Basic1\UserValidation1.cs" />
     <Compile Include="Basic2\AllEvents2.cs" />
     <Compile Include="Basic2\AllUsers2.cs" />
     <Compile Include="Basic2\BookReadingContext.cs" />
     <Compile Include="Basic2\EventInitializer.cs" />
     <Compile Include="Basic2\RegisterUser2.cs" />
+    <Compile Include="Basic2\UserValidation2.cs" />
     <Compile Include="BookData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +170,7 @@
     </Compile>
     <Compile Include="Helper\EventToEventModelHelper.cs" />
     <Compile Include="Helper\RegisterUserModelToUserHelper.cs" />
+    <Compile Include="Helper\UserModelToUserHelper.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\LoginUser.cs" />
     <Compile Include="Models\RegisterUser.cs" />
