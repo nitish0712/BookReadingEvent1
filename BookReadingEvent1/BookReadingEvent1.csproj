@@ -140,6 +140,7 @@
     <Compile Include="Basic2\AllUsers2.cs" />
     <Compile Include="Basic2\BookReadingContext.cs" />
     <Compile Include="Basic2\EventInitializer.cs" />
+    <Compile Include="Basic2\MyEvents2.cs" />
     <Compile Include="Basic2\RegisterUser2.cs" />
     <Compile Include="Basic2\UserValidation2.cs" />
     <Compile Include="BookData.Context.cs">
