@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookReadingEvent1.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,14 @@ namespace BookReadingEvent1.Controllers
                 }
                 return UserName;
             }
+        }
+
+        public ActionResult AllEvents()
+        {
+            AllEvents1 allEvents = new AllEvents1();
+            IEnumerable<Event> events = allEvents.getEvents;
+
+            return View(new EventToEventModelHeler().GetEventModels(events));
         }
     }
 }
