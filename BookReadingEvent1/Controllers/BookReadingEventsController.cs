@@ -8,6 +8,18 @@ namespace BookReadingEvent1.Controllers
 {
     public class BookReadingEventsController : Controller
     {
+        string UserName;
 
+        public string getUserName
+        {
+            get
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    UserName = User.Identity.Name;
+                }
+                return UserName;
+            }
+        }
     }
 }
