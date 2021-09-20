@@ -80,5 +80,30 @@ namespace BookReadingEvent1.Controllers
             return View();
         }
 
+
+        public ActionResult ViewEvent(int eventId)
+        {
+            Event1 evnt = new Event1();
+            EventModel eventModel = new EventToEventModelHelper().EventToEventModelMapping(evnt.GetEvent(eventId));
+            if(eventModel.InviteByEmail != null)
+            {
+                eventModel.Count = eventModel.InviteByEmail.Split(',').Length;
+            }
+            else
+            {
+                eventModel.Count = 0;
+            }
+            ViewBag.DisplayDescription = (eventModel.Description != null) ? true : false;
+            ViewBag.DisplayOtherDetails = (eventModel.OtherDetails != null) ? true : false;
+            ViewBag.DisplayDuration = (eventModel.Duration != null) ? true : false;
+            ViewBag.DisplayCount = (eventModel.Count != 0) ? true : false;
+            ViewBag.DisplayEditLink = ((eventModel.Date.Date > DateTime.Now.Date.Date)
+                || ((eventModel.Date.Date == DateTime.Now.Date.Date) && (eventModel.StartTime.Date.TimeOfDay > DateTime.Now.Date.TimeOfDay)))
+                && (eventModel.UserId.Equals(User.Identity.Name, StringComparison.OrdinalIgnoreCase) || User.IsInRole("Admin"))
+                ? true : false;
+
+            return View(eventModel);
+        }
+
     }
 }
