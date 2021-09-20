@@ -51,6 +51,12 @@ namespace BookReadingEvent1.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult CreateEvent()
+        {
+            return View();
+        }
+
 
     }
 }
