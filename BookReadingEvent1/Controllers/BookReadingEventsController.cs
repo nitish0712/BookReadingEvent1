@@ -105,10 +105,15 @@ namespace BookReadingEvent1.Controllers
             return View(eventModel);
         }
 
-        public ActionResult EditEvent()
+        [HttpGet]
+        public ActionResult EditEvent(int eventId)
         {
-            return View();
+            Event1 evnt = new Event1();
+            EventModel eventModel = new EventToEventModelHelper().EventToEventModelMapping(evnt.GetEvent(eventId));
+            return View(eventModel);
         }
+
+
 
     }
 }
