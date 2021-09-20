@@ -57,6 +57,13 @@ namespace BookReadingEvent1.Controllers
             return View();
         }
 
+        [ActionName("CreateEvent")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateEventPost()
+        {
+            return View();
+        }
 
     }
 }
