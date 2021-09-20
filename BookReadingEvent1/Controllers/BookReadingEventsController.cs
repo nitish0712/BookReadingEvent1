@@ -115,8 +115,14 @@ namespace BookReadingEvent1.Controllers
 
         [HttpPost]
         [ActionName("EditEvent")]
-        public ActionResult EditEventPost()
+        public ActionResult EditEventPost(EventModel eventModel)
         {
+            if (ModelState.IsValid)
+            {
+                EditEvent1 editEvent = new EditEvent1();
+                editEvent.EditEvent(new EventModelToEventHelper().EventModelToEventMapping(eventModel));
+                return RedirectToAction("ViewEvent", new { eventModel.EventId });
+            }
             return View();
         }
 
