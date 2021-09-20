@@ -126,6 +126,9 @@ namespace BookReadingEvent1.Controllers
             return View();
         }
 
-
+        public ActionResult DeleteEvent()
+        {
+            return View();
+        }
     }
 }
