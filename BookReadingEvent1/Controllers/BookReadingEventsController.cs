@@ -1,6 +1,7 @@
 ﻿using BookReadingEvent1.Basic1;
 using BookReadingEvent1.Common;
 using BookReadingEvent1.Helper;
+using BookReadingEvent1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,8 +61,15 @@ namespace BookReadingEvent1.Controllers
         [ActionName("CreateEvent")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateEventPost()
+        public ActionResult CreateEventPost([Bind(Include = "Title, Date, StartTime,Duration,OtherDetails,Type,InviteByEmail,Location,Description")] EventModel model)
         {
+            if (ModelState.IsValid)
+            {
+                model.UserId = User.Identity.Name;
+                Event evnt = new EventModelToEventHelper().EventModelToEventMapping(model);
+
+
+            }
             return View();
         }
 

@@ -175,6 +175,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\EventModelToEventHelper.cs" />
     <Compile Include="Helper\EventToEventModelHelper.cs" />
     <Compile Include="Helper\RegisterUserModelToUserHelper.cs" />
     <Compile Include="Helper\UserModelToUserHelper.cs" />
