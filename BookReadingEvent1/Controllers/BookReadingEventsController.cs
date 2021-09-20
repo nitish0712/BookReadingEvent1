@@ -105,5 +105,10 @@ namespace BookReadingEvent1.Controllers
             return View(eventModel);
         }
 
+        public ActionResult EditEvent()
+        {
+            return View();
+        }
+
     }
 }
