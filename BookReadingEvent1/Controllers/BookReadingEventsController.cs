@@ -113,6 +113,12 @@ namespace BookReadingEvent1.Controllers
             return View(eventModel);
         }
 
+        [HttpPost]
+        [ActionName("EditEvent")]
+        public ActionResult EditEventPost()
+        {
+            return View();
+        }
 
 
     }
