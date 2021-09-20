@@ -40,5 +40,17 @@ namespace BookReadingEvent1.Controllers
             var myEvents = getMyEvents.GetMyEvents(UserName);
             return View(new EventToEventModelHelper().GetEventModels(myEvents));
         }
+
+
+        public ActionResult InvitedToEvents()
+        {
+            string UserEmail = new UserEmail1().GetUserEmail(User.Identity.Name);
+            InvitedTo1 invitedTo = new InvitedTo1();
+            var invitedEvents = invitedTo.GetInvitedTo(UserEmail);
+            return View(new EventToEventModelHelper().GetEventModels(invitedEvents));
+
+        }
+
+
     }
 }

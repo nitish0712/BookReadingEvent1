@@ -133,15 +133,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Basic1\AllEvents1.cs" />
     <Compile Include="Basic1\AllUsers1.cs" />
+    <Compile Include="Basic1\InvitedTo1.cs" />
     <Compile Include="Basic1\MyEvents1.cs" />
     <Compile Include="Basic1\RegisterUser1.cs" />
+    <Compile Include="Basic1\UserEmail1.cs" />
     <Compile Include="Basic1\UserValidation1.cs" />
     <Compile Include="Basic2\AllEvents2.cs" />
     <Compile Include="Basic2\AllUsers2.cs" />
     <Compile Include="Basic2\BookReadingContext.cs" />
     <Compile Include="Basic2\EventInitializer.cs" />
+    <Compile Include="Basic2\InvitedTo2.cs" />
     <Compile Include="Basic2\MyEvents2.cs" />
     <Compile Include="Basic2\RegisterUser2.cs" />
+    <Compile Include="Basic2\UserEmail2.cs" />
     <Compile Include="Basic2\UserValidation2.cs" />
     <Compile Include="BookData.Context.cs">
       <AutoGen>True</AutoGen>
