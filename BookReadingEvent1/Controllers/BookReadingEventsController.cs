@@ -132,5 +132,11 @@ namespace BookReadingEvent1.Controllers
             deleteEvent.DeleteEvent(eventId);
             return RedirectToAction("About","Home");
         }
+
+        [HttpGet]
+        public ActionResult Comments()
+        {
+            return PartialView();
+        }
     }
 }
