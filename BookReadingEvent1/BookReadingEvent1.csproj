@@ -134,6 +134,7 @@
     <Compile Include="Basic1\AllEvents1.cs" />
     <Compile Include="Basic1\AllUsers1.cs" />
     <Compile Include="Basic1\CreateEvent1.cs" />
+    <Compile Include="Basic1\DeleteEvent1.cs" />
     <Compile Include="Basic1\EditEvent1.cs" />
     <Compile Include="Basic1\Event1.cs" />
     <Compile Include="Basic1\InvitedTo1.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Basic2\AllUsers2.cs" />
     <Compile Include="Basic2\BookReadingContext.cs" />
     <Compile Include="Basic2\CreateEvent2.cs" />
+    <Compile Include="Basic2\DeleteEvent2.cs" />
     <Compile Include="Basic2\EditEvent2.cs" />
     <Compile Include="Basic2\Event2.cs" />
     <Compile Include="Basic2\EventInitializer.cs" />

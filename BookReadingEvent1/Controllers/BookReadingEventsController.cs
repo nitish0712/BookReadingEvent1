@@ -126,9 +126,11 @@ namespace BookReadingEvent1.Controllers
             return View();
         }
 
-        public ActionResult DeleteEvent()
+        public ActionResult DeleteEvent(int eventId)
         {
-            return View();
+            DeleteEvent1 deleteEvent = new DeleteEvent1();
+            deleteEvent.DeleteEvent(eventId);
+            return RedirectToAction("About","Home");
         }
     }
 }
