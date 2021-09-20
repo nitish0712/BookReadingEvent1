@@ -68,6 +68,13 @@ namespace BookReadingEvent1.Controllers
                 model.UserId = User.Identity.Name;
                 Event evnt = new EventModelToEventHelper().EventModelToEventMapping(model);
 
+                if(new CreateEvent1().CreateEvent(evnt))
+                {
+                    return RedirectToAction("About", "Home");
+                }
+
+                ViewBag.Message = "This title already exists";
+                return View(model);
 
             }
             return View();
