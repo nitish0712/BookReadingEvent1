@@ -141,5 +141,11 @@ namespace BookReadingEvent1.Controllers
 
             return PartialView(new CommentToCommentModelHelper().GetCommentModel(comments));
         }
+
+        [HttpPost]
+        public ActionResult AddCommentsPost([Bind(Include = "EventId,CommentAdded")] CommentModel commentModel)
+        {
+            return View();   
+        }
     }
 }
