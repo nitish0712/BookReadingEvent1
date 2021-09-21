@@ -131,7 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Authorization\RoleProvider.cs" />
+    <Compile Include="Authorization\AppRoleProvider.cs" />
     <Compile Include="Basic1\AddComments1.cs" />
     <Compile Include="Basic1\AllEvents1.cs" />
     <Compile Include="Basic1\AllUsers1.cs" />
