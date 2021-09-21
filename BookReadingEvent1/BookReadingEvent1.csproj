@@ -131,6 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authorization\RoleProvider.cs" />
     <Compile Include="Basic1\AddComments1.cs" />
     <Compile Include="Basic1\AllEvents1.cs" />
     <Compile Include="Basic1\AllUsers1.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Basic1\MyEvents1.cs" />
     <Compile Include="Basic1\RegisterUser1.cs" />
     <Compile Include="Basic1\UserEmail1.cs" />
+    <Compile Include="Basic1\UserRole1.cs" />
     <Compile Include="Basic1\UserValidation1.cs" />
     <Compile Include="Basic2\AddComments2.cs" />
     <Compile Include="Basic2\AllEvents2.cs" />
@@ -158,6 +160,7 @@
     <Compile Include="Basic2\MyEvents2.cs" />
     <Compile Include="Basic2\RegisterUser2.cs" />
     <Compile Include="Basic2\UserEmail2.cs" />
+    <Compile Include="Basic2\UserRole2.cs" />
     <Compile Include="Basic2\UserValidation2.cs" />
     <Compile Include="BookData.Context.cs">
       <AutoGen>True</AutoGen>
