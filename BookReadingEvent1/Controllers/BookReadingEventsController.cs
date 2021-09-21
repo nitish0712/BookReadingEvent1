@@ -145,7 +145,13 @@ namespace BookReadingEvent1.Controllers
         [HttpPost]
         public ActionResult AddCommentsPost([Bind(Include = "EventId,CommentAdded")] CommentModel commentModel)
         {
-            return View();   
+            commentModel.Date = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                new AddComments1().AddComment(new CommentModelToCommentHelper().CommentModelToCommentMapping(commentModel));
+            }
+            return RedirectToAction("ViewEvent", new { commentModel.EventId });
+
         }
     }
 }
