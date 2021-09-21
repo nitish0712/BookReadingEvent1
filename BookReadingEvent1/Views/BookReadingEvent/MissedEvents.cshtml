@@ -6,13 +6,15 @@
 
 <h2>MissedEvents</h2>
 <div class="container">
-    @{
-                    <ul>
-                        @foreach (var item in Model)
-                        {
+@{
+    <ul>
+        @foreach (var item in Model)
+        {
 
-            <li>@Html.ActionLink(@item.Title, "ViewEvent", "BookReadingEvent", new { @item.EventId }, null)</li>}
-                    </ul> }
+            <li>@Html.ActionLink(@item.Title, "ViewEvent", "BookReadingEvent", new { @item.EventId }, null)</li>
+        }
+    </ul> 
+    }
 </div>
 
 
