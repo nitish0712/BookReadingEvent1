@@ -134,9 +134,12 @@ namespace BookReadingEvent1.Controllers
         }
 
         [HttpGet]
-        public ActionResult Comments()
+        public ActionResult Comments(int eventId)
         {
-            return PartialView();
+            Comments1 comments1 = new Comments1();
+            IEnumerable<Comment> comments = comments1.GetComments(eventId);
+
+            return PartialView(new CommentToCommentModelHelper().GetCommentModel(comments));
         }
     }
 }
