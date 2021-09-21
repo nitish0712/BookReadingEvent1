@@ -267,6 +267,7 @@
     <Content Include="Views\BookReadingEvent\EditEvent.cshtml" />
     <Content Include="Views\BookReadingEvent\MissedEvents.cshtml" />
     <Content Include="Views\BookReadingEvent\UpcomingEvents.cshtml" />
+    <Content Include="Views\BookReadingEvent\InvitedToEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

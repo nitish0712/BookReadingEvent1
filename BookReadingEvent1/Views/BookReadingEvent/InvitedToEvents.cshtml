@@ -1,11 +1,9 @@
-﻿@using System.Collections.Generic
-@using BookReadingEvent1.Models
+﻿@using BookReadingEvent1.Models
+@using System.Collections.Generic
 @model IEnumerable<EventModel>
+@{ ViewBag.Title = "InvitedTo"; }
 
-
-@{ ViewBag.Title = "UpcomingEvents"; }
-
-<h2>UpcomingEvents</h2>
+<h2>Events Invited To</h2>
 <div class="container">
 @{
     <ul>
@@ -14,6 +12,5 @@
 
             <li>@Html.ActionLink(@item.Title, "ViewEvent", "BookReadingEvent", new { @item.EventId }, null)</li>}
     </ul> 
-}
+ }
 </div>
-
