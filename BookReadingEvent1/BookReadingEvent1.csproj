@@ -262,6 +262,7 @@
     <Content Include="Views\BookReadingEvent\AllEvents.cshtml" />
     <Content Include="Views\BookReadingEvent\CreateEvent.cshtml" />
     <Content Include="Views\BookReadingEvent\CreateEventPost.cshtml" />
+    <Content Include="Views\BookReadingEvent\MyEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
