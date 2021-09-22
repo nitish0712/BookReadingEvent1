@@ -1,23 +1,26 @@
 ﻿
 using System.Collections.Generic;
 using System.Web.Mvc;
-using BusinessLayer;
-using Common;
+using BL;
+using Shared;
 using System.Linq;
 using System;
-using BookReading.Models;
-using BookReading.Helper;
+using MVCAssignment.Models;
+using MVCAssignment.Helper;
 
-namespace BookReading.Controllers
+namespace MVCAssignment.Controllers
     {
-
     public class HomeController : Controller
         {
+        public ActionResult Index()
+        {
+            return View();
+        }
 
         public ActionResult About()
             {
             IEnumerable<Event> upcomingEvents;
-            IEnumerable<Event> events = new AllEvents1().GetEvents;
+            IEnumerable<Event> events = new AllEventsBL().GetEvents;
             IEnumerable<Event> missedEvents;
             if (User.Identity.IsAuthenticated)
                 {
@@ -36,15 +39,6 @@ namespace BookReading.Controllers
 
                 }
 
-
-
-            if (User.Identity.IsAuthenticated)
-                {
-                }
-            else
-                {
-               
-                }
             List<IEnumerable<EventModel>> eventModels = new List<IEnumerable<EventModel>>();
             eventModels.Add(new EventToEventModelHelper().GetEventModels(missedEvents));
             eventModels.Add(new EventToEventModelHelper().GetEventModels(upcomingEvents));

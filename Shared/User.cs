@@ -2,8 +2,8 @@
 
 using System.Collections.Generic;
 
-namespace Common
-    {
+namespace Shared
+{
     public class User
     {
         
@@ -13,5 +13,5 @@ namespace Common
         public string Password { get; set; }
         public virtual ICollection<Event> Events { get; set; }
         public virtual ICollection<Role> Roles { get; set; }
-        }
+    }
 }

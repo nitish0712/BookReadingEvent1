@@ -4,7 +4,7 @@ using System;
 using System.Data.Entity.Infrastructure.Interception;
 
 
-namespace BookReading.Interception
+namespace MVCAssignment.Interception
     {
     public class EFCommandInterceptor : IDbCommandInterceptor
         {

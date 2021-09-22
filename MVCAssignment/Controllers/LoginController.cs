@@ -1,11 +1,11 @@
 ﻿
 using System.Web.Mvc;
 
-using BookReading.Models;
-using BookReading.Helper;
-using BusinessLayer;
+using MVCAssignment.Models;
+using MVCAssignment.Helper;
+using BL;
 using System.Web.Security;
-namespace BookReading.Controllers
+namespace MVCAssignment.Controllers
 {
     public class LoginController : Controller
     {
@@ -19,7 +19,7 @@ namespace BookReading.Controllers
         [HttpPost]
         public ActionResult LoginPost(UserModel user)
             {
-            UserValidation1 userValidation = new UserValidation1();
+            UserValidationBL userValidation = new UserValidationBL();
 
             if (userValidation.UserExists(new UserModelToUserHelper().UserModelToUserMapping(user)))
                 {
@@ -32,9 +32,6 @@ namespace BookReading.Controllers
                 ViewBag.Message = "Invalid UserName or Password";
                 return View();
                 }
-            
-
-
             }
 
         public ActionResult LogOut()

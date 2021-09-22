@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BookReading.Models
+namespace MVCAssignment.Models
     {
     public class CommentModel
         {

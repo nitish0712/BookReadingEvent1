@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
-using Common;
-using BookReading.Models;
+using Shared;
+using MVCAssignment.Models;
 
-namespace BookReading.Helper
+namespace MVCAssignment.Helper
     {
     public class CommentModelToCommentHelper
         {

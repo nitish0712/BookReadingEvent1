@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using BookReading.Models;
-using Common;
+using MVCAssignment.Models;
+using Shared;
 using System.Collections.Generic;
-namespace BookReading.Helper
+namespace MVCAssignment.Helper
     {
     public class EventToEventModelHelper
         {

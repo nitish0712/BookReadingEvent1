@@ -1,9 +1,9 @@
-﻿using Common;
+﻿using Shared;
 using System.Web.Mvc;
-using BookReading.Models;
-using BookReading.Helper;
-using BusinessLayer;
-namespace BookReading.Controllers
+using MVCAssignment.Models;
+using MVCAssignment.Helper;
+using BL;
+namespace MVCAssignment.Controllers
 {
     public class RegisterController : Controller
     {
@@ -20,7 +20,7 @@ namespace BookReading.Controllers
             User user = new RegisterUserModelToUserHelper().RegisterUserModelToUserMapping(userModel);
             if (ModelState.IsValid)
                 {
-                new RegisterUser1().AddUser(user);
+                new RegisterUserBL().AddUser(user);
                 return RedirectToAction("Login", "Login");
                 }
             return View();

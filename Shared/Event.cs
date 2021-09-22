@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Common
-    {
+namespace Shared
+{
     public class Event
-        {
+    {
 
         public int EventId { get; set; }
 
@@ -24,5 +24,5 @@ namespace Common
 
         public virtual ICollection<Invitation> Invitations{get;set;}
         public virtual ICollection<Comment> Comments { get; set; }
-        }
     }
+}

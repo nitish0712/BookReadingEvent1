@@ -1,13 +1,22 @@
 ﻿using System.Web.Mvc;
-using BusinessLayer;
-using BookReading.Models;
-using Common;
-using BookReading.Helper;
+using BL;
+using MVCAssignment.Models;
+using Shared;
+using MVCAssignment.Helper;
 using System.Collections.Generic;
 using System;
+using System.Data.Entity.SqlServer;
 
-namespace BookReading.Controllers
+namespace MVCAssignment.Controllers
     {
+
+    internal static class MissingDllHack
+    {
+        // Must reference a type in EntityFramework.SqlServer.dll so that this dll will be
+        // included in the output folder of referencing projects without requiring a direct
+        // dependency on Entity Framework. See http://stackoverflow.com/a/22315164/1141360.
+        private static SqlProviderServices instance = SqlProviderServices.Instance;
+    }
     public class BookReadingEventController : Controller
     {
 
@@ -27,7 +36,7 @@ namespace BookReading.Controllers
        
         public ActionResult AllEvents()
             {
-            AllEvents1 allEvents = new AllEvents1();
+            AllEventsBL allEvents = new AllEventsBL();
             IEnumerable<Event> events = allEvents.GetEvents;
              
               return View(new EventToEventModelHelper().GetEventModels(events));
@@ -47,8 +56,8 @@ namespace BookReading.Controllers
 
        public ActionResult EventsInvitedTo()
             {
-            string UserEmail = new UserEmail1().GetUserEmail(User.Identity.Name);
-            InvitedTo1 invitedToBL = new InvitedTo1();
+            string UserEmail = new UserEmailBL().GetUserEmail(User.Identity.Name);
+            InvitedToBL invitedToBL = new InvitedToBL();
             var invitedEvents = invitedToBL.GetInvitedTo(UserEmail);
             return View(new EventToEventModelHelper().GetEventModels(invitedEvents));
             }
@@ -57,10 +66,9 @@ namespace BookReading.Controllers
       
         [HttpGet]
         public ActionResult CreateEvent()
-            {
-           
+        {          
             return View();
-            }
+        }
         
         [ActionName("CreateEvent")]
         [HttpPost]
@@ -73,7 +81,7 @@ namespace BookReading.Controllers
                 
                 Event evt = new EventModelToEventHelper().EventModelToEventMapping(model);
 
-                if(new CreateEvent1().CreateEvent(evt))
+                if(new CreateEventBL().CreateEvent(evt))
 
                 return RedirectToAction("About","Home");
 
@@ -88,7 +96,7 @@ namespace BookReading.Controllers
        
         public ActionResult ViewEvent(int eventId)
             {
-             Event1 evt = new Event1();
+             EventBL evt = new EventBL();
             EventModel eventModel = new EventToEventModelHelper().EventToEventModelMapping(evt.GetEvent(eventId));
             if (eventModel.InviteByEmail != null)
                 {
@@ -114,7 +122,7 @@ namespace BookReading.Controllers
       
         public ActionResult EditEvent(int eventId)
             {
-            Event1 eventBL = new Event1();
+            EventBL eventBL = new EventBL();
             EventModel model = new EventToEventModelHelper().EventToEventModelMapping(eventBL.GetEvent(eventId));
             return View(model);
             }
@@ -127,7 +135,7 @@ namespace BookReading.Controllers
             {
             if (ModelState.IsValid)
                 {
-                EditEvent1 editEvent = new EditEvent1();
+                EditEventBL editEvent = new EditEventBL();
                 editEvent.EditEvent(new EventModelToEventHelper().EventModelToEventMapping(eventModel));
                 return RedirectToAction("ViewEvent",new { eventModel.EventId});
                 }
@@ -138,7 +146,7 @@ namespace BookReading.Controllers
 
         public ActionResult DeleteEvent(int eventId)
             {
-            DeleteEvent1 deleteEventBL = new DeleteEvent1();
+            DeleteEventBL deleteEventBL = new DeleteEventBL();
             deleteEventBL.DeleteEvent(eventId);
             return RedirectToAction("About","Home");
             }
@@ -146,7 +154,7 @@ namespace BookReading.Controllers
         [HttpGet]
         public ActionResult Comments(int eventId)
             {
-            Comments1 commentsBL = new Comments1();
+            CommentsBL commentsBL = new CommentsBL();
             IEnumerable<Comment> comments= commentsBL.GetComments(eventId);
             return PartialView(new CommentToCommentModelHelper().GetCommentModels(comments));
             }
@@ -159,10 +167,11 @@ namespace BookReading.Controllers
             commentModel.Date = DateTime.Now;
                 if(ModelState.IsValid)
                 {
-                new AddComments1().AddComment(new CommentModelToCommentHelper().CommentModelToCommentMapping(commentModel));
+                new AddCommentsBL().AddComment(new CommentModelToCommentHelper().CommentModelToCommentMapping(commentModel));
                 }
             return RedirectToAction("ViewEvent",new { commentModel.EventId});
             }
-            
+
+        
     }
 }

@@ -7,8 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using BookReading.Interception;
-namespace BookReading
+using MVCAssignment.Interception;
+namespace MVCAssignment
     {
     public class MvcApplication : System.Web.HttpApplication
         {

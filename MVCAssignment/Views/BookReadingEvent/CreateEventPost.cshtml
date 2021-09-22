@@ -1,18 +1,18 @@
-﻿@model BookReading.Models.EventModel
+﻿@model MVCAssignment.Models.EventModel
 
 @{
     ViewBag.Title = "CreateEventPost";
    
 }
 
-<h2>CreateEventPost</h2>
+<h2>Create Event Post</h2>
 
 @using (Html.BeginForm("CreateEvent","BookReadingEvent",FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>EventModel</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         

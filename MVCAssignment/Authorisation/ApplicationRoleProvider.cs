@@ -1,6 +1,6 @@
 ﻿using System.Web.Security;
-using BusinessLayer;
-namespace BookReading.Authorisation
+using BL;
+namespace MVCAssignment.Authorisation
     {
     public class ApplicationRoleProvider : RoleProvider
         {
@@ -33,7 +33,7 @@ namespace BookReading.Authorisation
 
         public override string[] GetRolesForUser(string userName)
             {
-            return new UserRoles1().GetRoles(userName);
+            return new UserRolesBL().GetRoles(userName);
             }
 
         public override string[] GetUsersInRole(string roleName)

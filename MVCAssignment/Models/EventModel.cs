@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Common;
-using BookReading.Validation;
-namespace BookReading.Models
+using Shared;
+using MVCAssignment.Validation;
+namespace MVCAssignment.Models
     {
     
     public class EventModel

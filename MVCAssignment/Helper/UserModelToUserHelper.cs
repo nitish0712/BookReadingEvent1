@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Common;
-using BookReading.Models;
+using Shared;
+using MVCAssignment.Models;
 using AutoMapper;
 using System.Linq;
 using System.Web;
 
-namespace BookReading.Helper
+namespace MVCAssignment.Helper
     {
     public class UserModelToUserHelper
         {
