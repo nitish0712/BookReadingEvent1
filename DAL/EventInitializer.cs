@@ -3,7 +3,7 @@ using Common;
 using System.Collections.Generic;
 using System;
 
-namespace DataLayer
+namespace DAL
     {
     public class EventInitializer:DropCreateDatabaseIfModelChanges<BookReadingContext>
         {

@@ -1,7 +1,7 @@
 ﻿using Common;
 using System.Linq;
 using System.Collections.Generic;
-namespace DataLayer
+namespace DAL
     {
      public class Event2
         {

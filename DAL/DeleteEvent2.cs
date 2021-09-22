@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace DataLayer
+namespace DAL
     {
     public class DeleteEvent2
         {

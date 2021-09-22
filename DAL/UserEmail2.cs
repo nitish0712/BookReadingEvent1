@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-namespace DataLayer
+namespace DAL
     {
     public class UserEmail2
         {

@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Common;
-namespace DataLayer
+namespace DAL
     {
     public class BookReadingContext : DbContext
         {

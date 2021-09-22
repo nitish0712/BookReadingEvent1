@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Common;
 
-namespace DataLayer
+namespace DAL
     {
      public class CreateEvent2
         {

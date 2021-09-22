@@ -1,38 +1,35 @@
-﻿@using System.Collections.Generic
+﻿@using BookReading
+@using System.Collections.Generic
 @using BookReading.Models
+
 @model IEnumerable<IEnumerable<EventModel>>
 
 
-@{
-    ViewBag.Title = "Home Page";
-}
+@{ ViewBag.Title = "Home Page"; }
 
 
 <div class="container">
     @{
 
-        <table class="table">
-            <thead >
-                <th>Missed Events</th>
-                 <th>Upcoming Events</th>   
-            </thead>
-                 <tbody>
-                    
-                     <tr>
-                         @foreach (var item in Model)
-                             {
-                             <td>
-                                 <ul>
-                                     @foreach (var evt in item)
-                                         {
-                                         <li>@Html.ActionLink(@evt.Title, "ViewEvent", "BookReadingEvent", new { @evt.EventId }, null)</li>
-                                         }
-                                 </ul>
-                             </td>
-                             }
-                     </tr>
-                 </tbody>
-        </table>
-        
-            }
+                    <table class="table">
+                        <thead>
+                        <th>Missed Events</th>
+                        <th>Upcoming Events</th>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                @foreach (var item in Model)
+                                {
+                    <td>
+                        <ul>
+                            @foreach (var evt in item)
+                            {
+            <li>@Html.ActionLink(@evt.Title, "ViewEvent", "BookReadingEvent", new { @evt.EventId }, null)</li>}
+                        </ul>
+                    </td>}
+                            </tr>
+                        </tbody>
+                    </table> 
+              }
 </div>

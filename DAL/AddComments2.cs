@@ -1,5 +1,5 @@
 ﻿using Common;
-namespace DataLayer
+namespace DAL
     {
     public  class AddComments2
         {

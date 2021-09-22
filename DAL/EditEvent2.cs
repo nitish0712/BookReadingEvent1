@@ -1,6 +1,6 @@
 ﻿using System;
 using Common;
-using DataLayer;
+using DAL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 using System.Data.Entity;
 
-namespace DataLayer
+namespace DAL
     {
     public class EditEvent2
         {

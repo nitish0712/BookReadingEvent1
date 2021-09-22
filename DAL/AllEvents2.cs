@@ -2,7 +2,7 @@
 using Common;
 using System.Collections.Generic;
 using System.Linq;
-namespace DataLayer
+namespace DAL
     {
     public class AllEvents2
         {

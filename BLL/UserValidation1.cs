@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
-using DataLayer;
+using DAL;
 namespace BusinessLayer
     {
     public class UserValidation1

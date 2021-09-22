@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Common;
-using DataLayer;
+using DAL;
 namespace BusinessLayer
     {
     public class AllUsers1
