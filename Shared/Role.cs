@@ -1,6 +1,6 @@
 ﻿
 
-namespace Shared
+namespace Common
     {
     public class Role
         {

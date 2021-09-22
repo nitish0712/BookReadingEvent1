@@ -1,12 +1,12 @@
 ﻿using System.Web.Mvc;
-using BL;
-using MVCAssignment.Models;
-using Shared;
-using MVCAssignment.Helper;
+using BusinessLayer;
+using BookReading.Models;
+using Common;
+using BookReading.Helper;
 using System.Collections.Generic;
 using System;
 
-namespace MVCAssignment.Controllers
+namespace BookReading.Controllers
     {
     public class BookReadingEventController : Controller
     {
@@ -27,7 +27,7 @@ namespace MVCAssignment.Controllers
        
         public ActionResult AllEvents()
             {
-            AllEventsBL allEvents = new AllEventsBL();
+            AllEvents1 allEvents = new AllEvents1();
             IEnumerable<Event> events = allEvents.GetEvents;
              
               return View(new EventToEventModelHelper().GetEventModels(events));
@@ -47,8 +47,8 @@ namespace MVCAssignment.Controllers
 
        public ActionResult EventsInvitedTo()
             {
-            string UserEmail = new UserEmailBL().GetUserEmail(User.Identity.Name);
-            InvitedToBL invitedToBL = new InvitedToBL();
+            string UserEmail = new UserEmail1().GetUserEmail(User.Identity.Name);
+            InvitedTo1 invitedToBL = new InvitedTo1();
             var invitedEvents = invitedToBL.GetInvitedTo(UserEmail);
             return View(new EventToEventModelHelper().GetEventModels(invitedEvents));
             }
@@ -73,7 +73,7 @@ namespace MVCAssignment.Controllers
                 
                 Event evt = new EventModelToEventHelper().EventModelToEventMapping(model);
 
-                if(new CreateEventBL().CreateEvent(evt))
+                if(new CreateEvent1().CreateEvent(evt))
 
                 return RedirectToAction("About","Home");
 
@@ -88,7 +88,7 @@ namespace MVCAssignment.Controllers
        
         public ActionResult ViewEvent(int eventId)
             {
-             EventBL evt = new EventBL();
+             Event1 evt = new Event1();
             EventModel eventModel = new EventToEventModelHelper().EventToEventModelMapping(evt.GetEvent(eventId));
             if (eventModel.InviteByEmail != null)
                 {
@@ -114,7 +114,7 @@ namespace MVCAssignment.Controllers
       
         public ActionResult EditEvent(int eventId)
             {
-            EventBL eventBL = new EventBL();
+            Event1 eventBL = new Event1();
             EventModel model = new EventToEventModelHelper().EventToEventModelMapping(eventBL.GetEvent(eventId));
             return View(model);
             }
@@ -127,7 +127,7 @@ namespace MVCAssignment.Controllers
             {
             if (ModelState.IsValid)
                 {
-                EditEventBL editEvent = new EditEventBL();
+                EditEvent1 editEvent = new EditEvent1();
                 editEvent.EditEvent(new EventModelToEventHelper().EventModelToEventMapping(eventModel));
                 return RedirectToAction("ViewEvent",new { eventModel.EventId});
                 }
@@ -138,7 +138,7 @@ namespace MVCAssignment.Controllers
 
         public ActionResult DeleteEvent(int eventId)
             {
-            DeleteEventBL deleteEventBL = new DeleteEventBL();
+            DeleteEvent1 deleteEventBL = new DeleteEvent1();
             deleteEventBL.DeleteEvent(eventId);
             return RedirectToAction("About","Home");
             }
@@ -146,7 +146,7 @@ namespace MVCAssignment.Controllers
         [HttpGet]
         public ActionResult Comments(int eventId)
             {
-            CommentsBL commentsBL = new CommentsBL();
+            Comments1 commentsBL = new Comments1();
             IEnumerable<Comment> comments= commentsBL.GetComments(eventId);
             return PartialView(new CommentToCommentModelHelper().GetCommentModels(comments));
             }
@@ -159,7 +159,7 @@ namespace MVCAssignment.Controllers
             commentModel.Date = DateTime.Now;
                 if(ModelState.IsValid)
                 {
-                new AddCommentsBL().AddComment(new CommentModelToCommentHelper().CommentModelToCommentMapping(commentModel));
+                new AddComments1().AddComment(new CommentModelToCommentHelper().CommentModelToCommentMapping(commentModel));
                 }
             return RedirectToAction("ViewEvent",new { commentModel.EventId});
             }

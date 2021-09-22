@@ -1,11 +1,11 @@
 ﻿
 using System.Web.Mvc;
 
-using MVCAssignment.Models;
-using MVCAssignment.Helper;
-using BL;
+using BookReading.Models;
+using BookReading.Helper;
+using BusinessLayer;
 using System.Web.Security;
-namespace MVCAssignment.Controllers
+namespace BookReading.Controllers
 {
     public class LoginController : Controller
     {
@@ -19,7 +19,7 @@ namespace MVCAssignment.Controllers
         [HttpPost]
         public ActionResult LoginPost(UserModel user)
             {
-            UserValidationBL userValidation = new UserValidationBL();
+            UserValidation1 userValidation = new UserValidation1();
 
             if (userValidation.UserExists(new UserModelToUserHelper().UserModelToUserMapping(user)))
                 {

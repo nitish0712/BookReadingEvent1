@@ -1,14 +1,14 @@
 ﻿
 using System.Collections.Generic;
 using System.Web.Mvc;
-using BL;
-using Shared;
+using BusinessLayer;
+using Common;
 using System.Linq;
 using System;
-using MVCAssignment.Models;
-using MVCAssignment.Helper;
+using BookReading.Models;
+using BookReading.Helper;
 
-namespace MVCAssignment.Controllers
+namespace BookReading.Controllers
     {
 
     public class HomeController : Controller
@@ -17,7 +17,7 @@ namespace MVCAssignment.Controllers
         public ActionResult About()
             {
             IEnumerable<Event> upcomingEvents;
-            IEnumerable<Event> events = new AllEventsBL().GetEvents;
+            IEnumerable<Event> events = new AllEvents1().GetEvents;
             IEnumerable<Event> missedEvents;
             if (User.Identity.IsAuthenticated)
                 {

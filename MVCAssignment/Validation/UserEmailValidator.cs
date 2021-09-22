@@ -1,16 +1,16 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
-using Shared;
+using Common;
 using System.Collections.Generic;
-using BL;
+using BusinessLayer;
 using System.Linq;
-namespace MVCAssignment.Validation
+namespace BookReading.Validation
     {
     public class UserEmailValidator:ValidationAttribute
         {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
-            IEnumerable<User> users = new AllUsersBL().GetUsers;
+            IEnumerable<User> users = new AllUsers1().GetUsers;
             var property1 = validationContext.ObjectType.GetProperty("UserName");
             var property2= validationContext.ObjectType.GetProperty("EmailId");
             string userName = (string)property1.GetValue(validationContext.ObjectInstance);

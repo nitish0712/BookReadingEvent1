@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace MVCAssignment
+namespace BookReading
     {
     public class BundleConfig
         {

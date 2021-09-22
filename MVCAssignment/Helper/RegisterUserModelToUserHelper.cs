@@ -1,7 +1,7 @@
-﻿using MVCAssignment.Models;
-using Shared;
+﻿using BookReading.Models;
+using Common;
 using AutoMapper;
-namespace MVCAssignment.Helper
+namespace BookReading.Helper
     {
     public class RegisterUserModelToUserHelper
         {

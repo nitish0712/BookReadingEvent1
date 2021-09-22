@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MVCAssignment.Models
+namespace BookReading.Models
     {
     public class UserModel
         {

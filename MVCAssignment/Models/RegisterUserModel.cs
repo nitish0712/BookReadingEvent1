@@ -1,6 +1,6 @@
-﻿using MVCAssignment.Validation;
+﻿using BookReading.Validation;
 using System.ComponentModel.DataAnnotations;
-namespace MVCAssignment.Models
+namespace BookReading.Models
     {
     public class RegisterUserModel
         {

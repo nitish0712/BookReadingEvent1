@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Shared
+namespace Common
     {
-      
-
-
     public class Event
         {
 

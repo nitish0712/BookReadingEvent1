@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace Shared
+namespace Common
     {
     public class User
     {

@@ -2,8 +2,8 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using Shared;
-namespace DAL
+using Common;
+namespace DataLayer
     {
     public class BookReadingContext : DbContext
         {
