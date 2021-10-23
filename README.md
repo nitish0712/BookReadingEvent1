@@ -1,6 +1,6 @@
 # Book Reading Application
 
-It was a .Net web application using the MVC framework. The application was designed to manage book-reading events, where book lovers come together for a community reading of their favorite book. Users can register on the website to create their own events and can invite other members to their events via email. The application was backed up by several validations for logged-in and anonymous users at both server and client-side along with unit test cases for each controller. Additionally, an admin was added in the application to monitor the activities of each user, where he can delete or edit any event.
+It is a .Net web application using the MVC framework. The application was designed to manage book-reading events, where book lovers come together for a community reading of their favorite book. Users can register on the website to create their own events and can invite other members to their events via email. The application was backed up by several validations for logged-in and anonymous users at both server and client-side along with unit test cases for each controller. Additionally, an admin was added in the application to monitor the activities of each user, where he can delete or edit any event.
 
 High level specifications for the application are as below:
 
